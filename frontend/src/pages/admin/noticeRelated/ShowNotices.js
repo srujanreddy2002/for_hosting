@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import {
-    Paper, Box, IconButton
+    Paper, Box,
 } from '@mui/material';
 import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -54,9 +54,9 @@ const ShowNotices = () => {
     const NoticeButtonHaver = ({ row }) => {
         return (
             <>
-                <IconButton onClick={() => deleteHandler(row.id, "Notice")}>
+                {/* <IconButton onClick={() => deleteHandler(row.id, "Notice")}>
                     <DeleteIcon color="error" />
-                </IconButton>
+                </IconButton> */}
             </>
         );
     };
@@ -90,7 +90,7 @@ const ShowNotices = () => {
                             {Array.isArray(noticesList) && noticesList.length > 0 &&
                                 <TableTemplate buttonHaver={NoticeButtonHaver} columns={noticeColumns} rows={noticeRows} />
                             }
-                            <SpeedDialTemplate actions={actions} />
+                            { <SpeedDialTemplate actions={actions} /> }
                         </Paper>
                     }
                 </>

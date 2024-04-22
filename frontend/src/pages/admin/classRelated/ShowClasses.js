@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { IconButton, Box, Menu, MenuItem, ListItemIcon, Tooltip } from '@mui/material';
-import DeleteIcon from "@mui/icons-material/Delete";
+//import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteUser } from '../../../redux/userRelated/userHandle';
+//import { deleteUser } from '../../../redux/userRelated/userHandle';
 import { getAllSclasses } from '../../../redux/sclassRelated/sclassHandle';
 import { BlueButton, GreenButton } from '../../../components/buttonStyles';
 import TableTemplate from '../../../components/TableTemplate';
@@ -11,10 +11,10 @@ import TableTemplate from '../../../components/TableTemplate';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import AddCardIcon from '@mui/icons-material/AddCard';
+//import AddCardIcon from '@mui/icons-material/AddCard';
 import styled from 'styled-components';
-import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
-import Popup from '../../../components/Popup';
+//import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
+//import Popup from '../../../components/Popup';
 
 const ShowClasses = () => {
   const navigate = useNavigate()
@@ -33,19 +33,19 @@ const ShowClasses = () => {
     console.log(error)
   }
 
-  const [showPopup, setShowPopup] = useState(false);
-  const [message, setMessage] = useState("");
+  //const [showPopup, setShowPopup] = useState(false);
+  //const [message, setMessage] = useState("");
 
-  const deleteHandler = (deleteID, address) => {
-    console.log(deleteID);
-    console.log(address);
-    setMessage("Sorry the delete function has been disabled for now.")
-    setShowPopup(true)
-    // dispatch(deleteUser(deleteID, address))
-    //   .then(() => {
-    //     dispatch(getAllSclasses(adminID, "Sclass"));
-    //   })
-  }
+  // const deleteHandler = (deleteID, address) => {
+  //   console.log(deleteID);
+  //   console.log(address);
+  //   setMessage("Sorry the delete function has been disabled for now.")
+  //   setShowPopup(true)
+  //   // dispatch(deleteUser(deleteID, address))
+  //   //   .then(() => {
+  //   //     dispatch(getAllSclasses(adminID, "Sclass"));
+  //   //   })
+  // }
 
   const sclassColumns = [
     { id: 'name', label: 'Class Name', minWidth: 170 },
@@ -65,9 +65,9 @@ const ShowClasses = () => {
     ];
     return (
       <ButtonContainer>
-        <IconButton onClick={() => deleteHandler(row.id, "Sclass")} color="secondary">
+        {/* <IconButton onClick={() => deleteHandler(row.id, "Sclass")} color="secondary">
           <DeleteIcon color="error" />
-        </IconButton>
+        </IconButton> */}
         <BlueButton variant="contained"
           onClick={() => navigate("/Admin/classes/class/" + row.id)}>
           View
@@ -131,16 +131,16 @@ const ShowClasses = () => {
     );
   }
 
-  const actions = [
-    {
-      icon: <AddCardIcon color="primary" />, name: 'Add New Class',
-      action: () => navigate("/Admin/addclass")
-    },
-    {
-      icon: <DeleteIcon color="error" />, name: 'Delete All Classes',
-      action: () => deleteHandler(adminID, "Sclasses")
-    },
-  ];
+  // const actions = [
+  //   {
+  //     icon: <AddCardIcon color="primary" />, name: 'Add New Class',
+  //     action: () => navigate("/Admin/addclass")
+  //   },
+  //   {
+  //     icon: <DeleteIcon color="error" />, name: 'Delete All Classes',
+  //     action: () => deleteHandler(adminID, "Sclasses")
+  //   },
+  // ];
 
   return (
     <>
@@ -159,11 +159,11 @@ const ShowClasses = () => {
               {Array.isArray(sclassesList) && sclassesList.length > 0 &&
                 <TableTemplate buttonHaver={SclassButtonHaver} columns={sclassColumns} rows={sclassRows} />
               }
-              <SpeedDialTemplate actions={actions} />
+              {/* <SpeedDialTemplate actions={actions} /> */}
             </>}
         </>
       }
-      <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
+      {/* <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} /> */}
 
     </>
   );

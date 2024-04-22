@@ -72,7 +72,7 @@ const LoginPage = ({ role }) => {
         if (name === 'rollNumber') setRollNumberError(false);
         if (name === 'studentName') setStudentNameError(false);
     };
-
+    /*
     const guestModeHandler = () => {
         const password = "zxc"
 
@@ -95,7 +95,7 @@ const LoginPage = ({ role }) => {
             setGuestLoader(true)
             dispatch(loginUser(fields, role))
         }
-    }
+    }*/
 
     useEffect(() => {
         if (status === 'success' || currentUser !== null) {
@@ -234,9 +234,10 @@ const LoginPage = ({ role }) => {
                             </LightPurpleButton>
                             <Button
                                 fullWidth
-                                onClick={guestModeHandler}
+                                //onClick={guestModeHandler}
                                 variant="outlined"
                                 sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
+                                style={{display:"none"}}
                             >
                                 Login as Guest
                             </Button>
@@ -247,7 +248,7 @@ const LoginPage = ({ role }) => {
                                     </Grid>
                                     <Grid item sx={{ ml: 2 }}>
                                         <StyledLink to="/Adminregister">
-                                            Sign up
+                                            Sign up 
                                         </StyledLink>
                                     </Grid>
                                 </Grid>

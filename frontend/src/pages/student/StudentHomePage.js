@@ -54,7 +54,7 @@ const StudentHomePage = () => {
                             <Data start={0} end={numberOfSubjects} duration={2.5} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={3} lg={3}>
+                    {/* <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
                             <img src={Assignment} alt="Assignments" />
                             <Title>
@@ -62,7 +62,7 @@ const StudentHomePage = () => {
                             </Title>
                             <Data start={0} end={15} duration={4} />
                         </StyledPaper>
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12} md={4} lg={3}>
                         <ChartContainer>
                             {

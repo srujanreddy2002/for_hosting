@@ -14,17 +14,14 @@ const Homepage = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <StyledPaper elevation={3}>
-                        <StyledTitle>
+                        <StyledTitle style={{textAlign:'center'}} >
                             Welcome to
                             <br />
-                            School Management
+                            Tuition and Tutors
                             <br />
-                            System
                         </StyledTitle>
                         <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
-                            Seamlessly track attendance, assess performance, and provide feedback.
-                            Access records, view marks, and communicate effortlessly.
+                        We and our team dedicate ourselves at your service to give you the best of the Tutors and Tuition Services with experienced and qualified teachers. Our team is very flexible in terms of its services and is ready to give you the best of them as per your convenience.
                         </StyledText>
                         <StyledBox>
                             <StyledLink to="/choose">
@@ -32,7 +29,7 @@ const Homepage = () => {
                                     Login
                                 </LightPurpleButton>
                             </StyledLink>
-                            <StyledLink to="/chooseasguest">
+                            <StyledLink to="/chooseasguest" style={{display:"none"}}>
                                 <Button variant="outlined" fullWidth
                                     sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
                                 >

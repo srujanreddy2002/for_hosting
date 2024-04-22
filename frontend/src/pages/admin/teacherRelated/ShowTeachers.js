@@ -133,9 +133,9 @@ const ShowTeachers = () => {
                                             );
                                         })}
                                         <StyledTableCell align="center">
-                                            <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
+                                            {/* <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
                                                 <PersonRemoveIcon color="error" />
-                                            </IconButton>
+                                            </IconButton> */}
                                             <BlueButton variant="contained"
                                                 onClick={() => navigate("/Admin/teachers/teacher/" + row.id)}>
                                                 View
@@ -160,7 +160,7 @@ const ShowTeachers = () => {
                 }}
             />
 
-            <SpeedDialTemplate actions={actions} />
+            {/* <SpeedDialTemplate actions={actions} /> */}
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </Paper >
     );

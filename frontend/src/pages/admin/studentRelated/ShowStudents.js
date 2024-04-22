@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { getAllStudents } from '../../../redux/studentRelated/studentHandle';
-import { deleteUser } from '../../../redux/userRelated/userHandle';
+//import { deleteUser } from '../../../redux/userRelated/userHandle';
 import {
     Paper, Box, IconButton
 } from '@mui/material';
@@ -41,7 +41,7 @@ const ShowStudents = () => {
 
     const [showPopup, setShowPopup] = React.useState(false);
     const [message, setMessage] = React.useState("");
-
+ 
     const deleteHandler = (deleteID, address) => {
         console.log(deleteID);
         console.log(address);
@@ -110,9 +110,9 @@ const ShowStudents = () => {
         };
         return (
             <>
-                <IconButton onClick={() => deleteHandler(row.id, "Student")}>
+                {/* <IconButton onClick={() => deleteHandler(row.id, "Student")}>
                     <PersonRemoveIcon color="error" />
-                </IconButton>
+                </IconButton> */}
                 <BlueButton variant="contained"
                     onClick={() => navigate("/Admin/students/student/" + row.id)}>
                     View
@@ -201,7 +201,7 @@ const ShowStudents = () => {
                             {Array.isArray(studentsList) && studentsList.length > 0 &&
                                 <TableTemplate buttonHaver={StudentButtonHaver} columns={studentColumns} rows={studentRows} />
                             }
-                            <SpeedDialTemplate actions={actions} />
+                            {/* <SpeedDialTemplate actions={actions} /> */}
                         </Paper>
                     }
                 </>

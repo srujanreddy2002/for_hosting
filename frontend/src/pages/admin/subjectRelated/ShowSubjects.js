@@ -7,10 +7,10 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import {
     Paper, Box, IconButton,
 } from '@mui/material';
-import DeleteIcon from "@mui/icons-material/Delete";
+// import DeleteIcon from "@mui/icons-material/Delete";
 import TableTemplate from '../../../components/TableTemplate';
 import { BlueButton, GreenButton } from '../../../components/buttonStyles';
-import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
+// import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
 
 const ShowSubjects = () => {
@@ -33,13 +33,13 @@ const ShowSubjects = () => {
     const deleteHandler = (deleteID, address) => {
         console.log(deleteID);
         console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        //setMessage("Sorry the delete function has been disabled for now.")
+        //setShowPopup(true)
 
-        // dispatch(deleteUser(deleteID, address))
-        //     .then(() => {
-        //         dispatch(getSubjectList(currentUser._id, "AllSubjects"));
-        //     })
+         dispatch(deleteUser(deleteID, address))
+             .then(() => {
+                dispatch(getSubjectList(currentUser._id, "AllSubjects"));
+             })
     }
 
     const subjectColumns = [
@@ -61,9 +61,9 @@ const ShowSubjects = () => {
     const SubjectsButtonHaver = ({ row }) => {
         return (
             <>
-                <IconButton onClick={() => deleteHandler(row.id, "Subject")}>
+                {/* <IconButton onClick={() => deleteHandler(row.id, "Subject")}>
                     <DeleteIcon color="error" />
-                </IconButton>
+                </IconButton> */}
                 <BlueButton variant="contained"
                     onClick={() => navigate(`/Admin/subjects/subject/${row.sclassID}/${row.id}`)}>
                     View
@@ -78,8 +78,8 @@ const ShowSubjects = () => {
             action: () => navigate("/Admin/subjects/chooseclass")
         },
         {
-            icon: <DeleteIcon color="error" />, name: 'Delete All Subjects',
-            action: () => deleteHandler(currentUser._id, "Subjects")
+            // icon: <DeleteIcon color="error" />, name: 'Delete All Subjects',
+            // action: () => deleteHandler(currentUser._id, "Subjects")
         }
     ];
 
@@ -101,7 +101,7 @@ const ShowSubjects = () => {
                             {Array.isArray(subjectsList) && subjectsList.length > 0 &&
                                 <TableTemplate buttonHaver={SubjectsButtonHaver} columns={subjectColumns} rows={subjectRows} />
                             }
-                            <SpeedDialTemplate actions={actions} />
+                            {/* <SpeedDialTemplate actions={actions} /> */}
                         </Paper>
                     }
                 </>
